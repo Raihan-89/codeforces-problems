@@ -1,0 +1,44 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int i,t,a[5],f1,f2,count;
+    cin>>t;
+    while(t--)
+    {
+        count=0;
+        for(i=0;i<4;i++)
+        {
+            cin>>a[i];
+        }
+        if(a[0]>a[1])
+        {
+            f1=a[0];
+            a[0]=0;
+        }
+        else
+        {
+            f1=a[1];
+            a[1]=0;
+        }
+        if(a[2]>a[3])
+        {
+            f2=a[2];
+            a[2]=0;
+        }
+        else
+        {
+            f2=a[3];
+            a[3]=0;
+        }
+        for(i=0;i<4;i++)
+        {
+            if(f1>a[i]&&f2>a[i])
+                count++;
+        }
+        if(count==4)
+            cout<<"YES"<<endl;
+        else
+            cout<<"NO"<<endl;
+    }
+}
